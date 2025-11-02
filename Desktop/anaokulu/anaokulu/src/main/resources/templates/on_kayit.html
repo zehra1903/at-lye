@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <title>Hızlı Ön Kayıt</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/on_kayit.css">
+</head>
+<body>
+<!--    <header>
+        <h1>Hızlı Ön Kayıt Formu</h1>
+    </header>
+    -->
+    
+    <div class="topbar">
+    <span>📞 0(542) 899 88 85</span>
+    <span>✉️ info@ceyanatolye.com</span>
+    <span class="social">Takip Et: 🌐 IG | FB</span>
+  </div>
+
+<header>
+    <div class="logo">
+      <img src="/CEYAN.png" alt="Logo" class="logo-img">
+      <span>CEYAN ÇOCUK ATÖLYESİ</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Anasayfa</a></li>
+        <li><a href="#">Kurumsal</a></li>
+        <li><a href="#">Programlarımız</a></li>
+        <li><a href="#">Galeri</a></li>
+        <li><a href="#">Duyurular</a></li>
+        <li><a href="#">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="form-section">
+    <form action="/on-kayit" method="post" th:object="${onKayit}">
+        <label>Çocuğun Adı Soyadı:</label>
+        <input type="text" name="childName" required>
+            
+        <label>Veli Soyadı:</label>
+        <input type="text" name="parentName" required> 
+            
+        <label>Veli Telefon Numarası:</label>
+        <input type="tel" name="phone" required> 
+            
+            <label>Atölye Seçimi</label>
+            <select name="atolye" required>
+                <option>Sanat Atölyesi</option>      
+                <option>Müzik Atölyesi</option>            
+                <option>Drama Atölyesi</option>            
+                <option>Oyun Atölyesi</option>            
+                <option>Stem Atölyesi</option>            
+                <option>Kitap Atölyesi</option>  
+            </select>
+            
+            
+            <button type="submit" class="btn">Gönder</button>                                                                                       
+    </form>
+</section>
+</body>
+</html>
