@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 Kas 2025, 23:07:25
+    Author     : ZEHRA
+*/
+
+.kurumsal-section {
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 10%;
+}
+
+.kurumsal-left img {
+  width: 100%;
+  height:auto;
+  object-fit:cover;
+  border-radius: 10px;
+}
+
+.kurumsal-right {
+  max-width: 600px;
+}
+
+.kurumsal-right h1 {
+  color: #FF7E5F;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.kurumsal-right h2 {
+  color: #FF7E5F;
+  margin-top: 30px;
+  font-size: 26px;
+}
+
+.kurumsal-right p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.footer {
+    background: #f4f4f4;
+    padding: 25px 0;
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 15px;
+}
+
+.footer-content strong {
+    color: #000;
+}

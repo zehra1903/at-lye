@@ -1,22 +1,12 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 2 Eki 2025, 18:39:40
-    Author     : ZEHRA
-*/
-
+/* ----------------- Ortak Body & Genel Ayarlar ----------------- */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-size: 200px 200px; 
-  color: #333;
-  background: linear-gradient(135deg, #FFF8F0, #FFE3E3, #E0F7FA);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: linear-gradient(to right, #ffe6e6, #e6f7ff);
   color: #333;
 }
-
 
 .topbar {
   background: #A3E4D7;
@@ -26,128 +16,206 @@ body {
   font-size: 14px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #333;
-}
-
-.logo-img {
-  width: 90px;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 50%;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
   background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
 .logo {
-  font-size: 22px;
+  display: flex;
+  align-items: center;
   font-weight: bold;
+  font-size: 1.3rem;
   color: #FF7E5F;
 }
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+
+.logo-img {
+  width: 85px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
 }
+
+/* ----------------- Navbar ----------------- */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between; /* öğeleri eşit dağıtır */
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
 nav a {
   text-decoration: none;
   font-weight: 600;
   color: #333;
+  transition: color 0.3s ease;
 }
+
 nav a:hover {
   color: #FF7E5F;
 }
-.btn {
+
+/* Navbar Buton */
+.btn-navbar {
   background: #FFB347;
   padding: 10px 20px;
-  color: white;
   border-radius: 30px;
-  text-decoration: none;
+  color: white;
   font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
-.btn:hover {
+
+.btn-navbar:hover {
   background: #FF7E5F;
 }
 
+/* Sayfaya özel: Hızlı Ön Kayıt sayfasında navbar butonunu gizle */
+.hizli-onkayit .btn-navbar {
+  display: none;
+}
+
+/* ----------------- Form ----------------- */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.6s ease;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input, select, textarea {
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #FF7E5F;
+  outline: none;
+}
+
+button.btn {
+  background: #FFB347;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 50%;
+  align-self: center;
+  margin-top: 10px;
+}
+
+button.btn:hover {
+  background: #FF7E5F;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 30px 25px;
+  }
+
+  button.btn {
+    width: 100%;
+  }
+}
+
+/* ----------------- Hero Section ----------------- */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 100px 10%;
-  min-height: 100vh;
+  min-height: 50vh;
   background: linear-gradient(to right, #ffe6e6, #e6f7ff);
-  background-attachment: fixed;
-  background-size: cover;
-  overflow: hidden;
 }
+
 .hero-text {
   max-width: 50%;
 }
+
 .hero-text h1 {
   font-size: 40px;
 }
+
 .hero-text h1 span {
   color: #FF7E5F;
 }
+
 .hero-img img {
   width: 400px;
   border-radius: 20px;
 }
-.dropdown-container{
-    position: relative;
-    display: inline-block;
+
+/* Dropdown */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
 }
-.btn{
-    background-color: #ff8c00;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: 10px 15px;
+  min-width: 200px;
+  max-height: 180px;
+  z-index: 10;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.3s ease;
 }
-.btn:hover{
-    background-color: #ff7b00;
+
+.dropdown-content p {
+  margin: 8px 0;
+  color:#333;
+  font-weight: 500;
+  transition: color 0.4s ease;
+  cursor: default;
 }
-.dropdown-content{
-    display: none;
-    position: absolute;
-    top: 110%;
-    left: 0;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter:blur(8px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    border-radius: 10px;
-    padding: 10px 15px;
-    min-width: 200px;
-    max-height: 180px;
-    z-index: 10;
-    text-align: left;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.3s ease;
+
+.dropdown-content p:hover {
+  color: #ff7b00;
 }
-.dropdown-content p{
-    margin: 8px 0;
-    color:#333;
-    font-weight: 500;
-    transition:color 0.4s ease;
-    cursor: default;
-}
-.dropdown-content p:hover{
-    color: #ff7b00;
-}
-.dropdown-container:hover .dropdown-content{
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+
+.dropdown-container:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
