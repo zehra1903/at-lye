@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+    <html xmlns:th="http://www.thymleaf.org">
+        <title th:text="${d.baslik}">Duyuru Detay</title>
+        <link rel="stylesheet" href="/style.css">
+            <link rel="stylesheet" href="/duyuruDetay.css">
+                </head>
+
+                <body>
+                <div th:replace="fragments :: topbar"></div>
+                <header th:replace="fragments :: header"></header>
+
+
+
+
+
+                <div class="duyuru-detay">
+
+                    <h1 th:text="${d.baslik}"></h1>
+
+                    <p th:text="${d.icerik}"></p>
+
+                    <a href="/duyurular" class="geri-btn">← Geri Dön</a>
+                </div>
+
+                </body>
+                </html>

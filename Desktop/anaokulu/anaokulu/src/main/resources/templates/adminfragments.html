@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${sayfaBaslik}">Admin Paneli</title>
+    <link rel="stylesheet" href="/adminduyuru.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="/CEYAN_1.png" alt="Logo">
+        <h2>Admin Paneli</h2>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/admin/duyurular">Duyurular</a></li>
+        <li><a href="/admin/galeri">Galeri</a></li>
+        <li><a href="/admin/mesajlar">Mesajlar</a></li>
+        <li><a href="/admin/onkayit">Ön Kayıt</a></li>
+        <li><a href="#">Ayarlar</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div th:replace="${icerik}"></div>
+</div>
+
+</body>
+</html>

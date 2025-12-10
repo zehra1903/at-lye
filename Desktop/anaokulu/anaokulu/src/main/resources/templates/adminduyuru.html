@@ -1,16 +1,127 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html lang="tr">
     <head>
-    <title>TODO supply a title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<div>TODO write content</div>
-</body>
-</html>
+        <meta charset="UTF-8">
+    <title>Admin Paneli | CEYAN Anaokulu</title>
+    <link rel="stylesheet" href="/adminduyuru.css">
+    </head>
+
+    <body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/CEYAN_1.png" alt="Logo">
+                <h2>Admin Paneli</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/admin">Duyurular</a></li>
+            <li><a href="/admin/galeri">Galeri</a></li>
+            <li><a href="/admin/atolye">Atölye</a></li>
+            <li><a href="/admin/mesajlar">Mesajlar</a></li>
+            <li><a href="/admin/onkayit">Ön Kayıt</a></li>
+            <li><a href="#">Ayarlar</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Duyurular</h1>
+        <div th:if="${successMessage}"
+             style="background:#D75AA0; padding:10px; border-radius:5px; margin-bottom:10px; color:black;">
+            <span th:text="${successMessage}"></span>
+        </div>
+        <div class="add-box">
+            <form action="/admin/duyuru-ekle" method="post">
+                <input type="text" name="baslik" placeholder="Duyuru Başlığı" required>
+                    <textarea name="icerik" placeholder="Duyuru İçeriği" required></textarea>
+                    <button type="submit">Ekle</button>
+            </form>
+        </div>
+
+        <h2>Mevcut Duyurular</h2>
+
+        <div class="table-box">
+
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>İçerik</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </tr>
+
+                <tr th:each="d : ${duyurular}">
+                    <td th:text="${d.id}"></td>
+                    <td th:text="${d.baslik}"></td>
+                    <td th:text="${d.icerik}"></td>
+
+                    <td>
+                        <button class="edit-btn"
+                                onclick="openEditModal(this)"
+                                th:attr="data-id=${d.id}, 
+                                data-baslik=${d.baslik}, 
+                                data-icerik=${d.icerik}">
+                            ✏️ Düzenle
+                        </button>
+
+
+
+
+                    </td>
+
+                    <td>
+                        <a th:href="@{/admin/duyuru-sil(id=${d.id})}"
+                           class="delete-btn"
+                           onclick="return confirm('Bu duyuruyu silmek istediğine emin misin?');">
+                            ❌ Sil
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Duyuruyu Düzenle</h2>
+
+            <form action="/admin/duyuru-guncelle" method="post">
+
+                <input type="hidden" name="id" id="edit-id">
+
+                    <label for="edit-baslik">Başlık:</label>
+                    <input type="text" id="edit-baslik" name="baslik">
+
+                        <label for="edit-icerik">İçerik:</label>
+                        <textarea id="edit-icerik" name="icerik"></textarea>
+
+                        <div class="modal-buttons">
+                            <button type="button" class="close-btn"
+                                    onclick="document.getElementById('editModal').style.display = 'none'">
+                                Kapat
+                            </button>
+
+                            <button type="submit" class="save-btn">Kaydet</button>
+                        </div>
+
+                        </form>
+                        </div>
+                        </div>
+
+
+
+                        <script>
+                            function openEditModal(btn) {
+                                document.getElementById("edit-id").value = btn.dataset.id;
+                                document.getElementById("edit-baslik").value = btn.dataset.baslik;
+                                document.getElementById("edit-icerik").value = btn.dataset.icerik;
+
+                                document.getElementById("editModal").style.display = "flex";
+                            }
+                        </script>
+
+                        </body>
+                        </html>

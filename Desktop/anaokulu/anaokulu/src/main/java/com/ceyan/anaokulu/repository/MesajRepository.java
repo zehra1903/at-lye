@@ -5,15 +5,13 @@
  */
 package com.ceyan.anaokulu.repository;
 
-import com.ceyan.anaokulu.entity.Duyuru;
+import com.ceyan.anaokulu.entity.Mesaj;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author ZEHRA
  */
-@Repository
-public interface DuyuruRepository extends JpaRepository<Duyuru, Long>{
+public interface MesajRepository extends JpaRepository<Mesaj,Long>{
     
 }

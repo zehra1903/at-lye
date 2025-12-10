@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <title>Ön Kayıt | Admin Paneli</title>
+    <link rel="stylesheet" href="/adminduyuru.css">
+    </head>
+    <body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/CEYAN_1.png" alt="Logo">
+                <h2>Admin Paneli</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/admin">Duyurular</a></li>
+            <li><a href="/admin/galeri">Galeri</a></li>
+            <li><a href="/admin/atolye">Atölye</a></li>
+            <li><a class="active" href="/admin/mesajlar">Mesajlar</a></li>
+            <li><a href="/admin/onkayit">Ön Kayıt</a></li>
+            <li><a href="#">Ayarlar</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <button class="add-button" onclick="document.getElementById('modal').style.display = 'flex'">
+            + Yeni Atölye Ekle
+        </button>
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>Atölye Adı</th>
+                    <th>Yaş</th>
+                    <th>Süre</th>
+                    <th>Ders Sayısı</th>
+                    <th>Sertifika</th>
+                    <th>Dil</th>
+                </tr>
+                <tr th:each="a : ${atolyeler}">
+                    <td th:text="${a.atolyeAdi}"></td>
+                    <td th:text="${a.yas}"></td>
+                    <td th:text="${a.sure}"></td>
+                    <td th:text="${a.dersSayisi}"></td>
+                    <td th:text="${a.sertifika}"></td>
+                    <td th:text="${a.dil}"></td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Yeni Atölye Ekle</h2>
+
+            <form action="/admin/atolye-ekle" method="post" enctype="multipart/form-data">
+
+                <label>Atölye Adı:</label>
+                <input type="text" name="ad" required>
+
+                    <label>Yaş:</label>
+                    <select name="yas" required>
+                        <option value="">Seçiniz</option>
+                        <option value="12-36 Ay">12-36 Ay</option>
+                        <option value="3-4 Yaş">3-4 Yaş</option>
+                        <option value="4-5 Yaş">4-5 Yaş</option>
+                        <option value="5-6 Yaş">5-6 Yaş</option>
+                        <option value="6+ Yaş">6+ Yaş</option>
+                    </select>
+
+                    <label>Süre:</label>
+                    <input type="text" name="sure" placeholder="Örn: 40 dakika" required>
+
+                        <label>Ders Sayısı:</label>
+                        <input type="number" name="dersSayisi" required>
+
+                            <label>Sertifika:</label>
+                            <select name="sertifika" required>
+                                <option value="">Seçiniz</option>
+                                <option value="Var">Var</option>
+                                <option value="Yok">Yok</option>
+                            </select>
+
+                            <label>Dil:</label>
+                            <select name="dil" required>
+                                <option value="">Seçiniz</option>
+                                <option value="Türkçe">Türkçe</option>
+                                <option value="İngilizce">İngilizce</option>
+                            </select>
+
+
+
+                            <button type="submit" class="save-btn">Kaydet</button>
+                            <button type="button" class="close-btn"
+                                    onclick="document.getElementById('modal').style.display = 'none'">
+                                Kapat
+                            </button>
+                            </form>
+                            </div>
+                            </div>
+
+                            </body>
+                            </html>

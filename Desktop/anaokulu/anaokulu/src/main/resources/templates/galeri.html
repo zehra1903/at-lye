@@ -7,95 +7,34 @@ and open the template in the editor.
 <html lang="tr">
     <head>
         <meta charset="UTF-8">
+    <html xmlns:th="http://www.thymleaf.org">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri | CEYAN Çocuk Atölyesi</title>
-    <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="/galeri.css">
-            </head>
-            <body>
+        <title>Galeri | CEYAN Çocuk Atölyesi</title>
+        <link rel="stylesheet" href="/style.css">
+            <link rel="stylesheet" href="/galeri.css">
+                </head>
+                <body>
+                <div th:replace="fragments :: topbar"></div>
+                <header th:replace="fragments :: header"></header>
 
-            <div class="topbar">
-                <span>📞 0(542) 899 88 85</span>
-                <span>✉️ info@ceyanatolye.com</span>
-                <span class="social">Takip Et: 🌐 IG | FB</span>
-            </div>
 
-            <header>
-                <div class="logo">
-                    <img src="/CEYAN.png" alt="Logo" class="logo-img">
-                        <span>CEYAN ÇOCUK ATÖLYESİ</span>
+                
+
+
+
+                <div class="galeri">
+
+
+
+
+                    <th:block th:each="g : ${resimler}">
+                        <img th:src="${g.resimYolu}" alt="Galeri Resmi">
+                    </th:block>
+
                 </div>
 
-                <nav>
-                    <ul>
-                        <li><a href="/">Anasayfa</a></li>
-                        <li><a href="/kurumsal" class="active">Kurumsal</a></li>
-                        <li class="dropdown-container">
-                            <a href="#">Programlarımız</a>
-                            <ul class="dropdown-content">
-                                <li><a href="#">🎨 Sanat Atölyesi</a></li>
-                                <li><a href="#">🎵 Müzik Atölyesi</a></li>
-                                <li><a href="#">🎭 Drama Atölyesi</a></li>
-                                <li><a href="#">🧩 Oyun Atölyesi</a></li>
-                                <li><a href="#">🔬 Stem Atölyesi</a></li>
-                                <li><a href="#">📚 Kitap Atölyesi</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/galeri">Galeri</a></li>
-                        <li><a href="/duyurular">Duyurular</a></li>
-                        <li><a href="/iletisim">İletişim</a></li>
-                        <li><a href="/on-kayit" class="btn-navbar">Hızlı Ön Kayıt</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            <div class="galeri">
-
-                <img src="/galeri1.jpg"
-                     alt="galeri Fotoğraf">
-                    <img src="/galeri2.jpg"
-                         alt="galeri Fotoğraf">
-                        <img src="/galeri3.jpg"
-                             alt="galeri Fotoğraf">
-                            <img src="/galeri4.jpg"
-                                 alt="galeri Fotoğraf">
-                                <img src="/galeri5.jpg"
-                                     alt="galeri Fotoğraf">                
-                                    <img src="/galeri1.jpg"
-                                         alt="galeri Fotoğraf">
-                                        <img src="/galeri2.jpg"
-                                             alt="galeri Fotoğraf">
-                                            <img src="/galeri3.jpg"
-                                                 alt="galeri Fotoğraf">
-                                                <img src="/galeri4.jpg"
-                                                     alt="galeri Fotoğraf">
-                                                    <img src="/galeri5.jpg"
-                                                         alt="galeri Fotoğraf">                
-
-                                                        <img src="/galeri1.jpg"
-                                                             alt="galeri Fotoğraf">
-                                                            <img src="/galeri2.jpg"
-                                                                 alt="galeri Fotoğraf">
-                                                                <img src="/galeri3.jpg"
-                                                                     alt="galeri Fotoğraf">
-                                                                    <img src="/galeri4.jpg"
-                                                                         alt="galeri Fotoğraf">
-                                                                        <img src="/galeri5.jpg"
-                                                                             alt="galeri Fotoğraf">                
-                                                                            <img src="/galeri1.jpg"
-                                                                                 alt="galeri Fotoğraf">
-                                                                                <img src="/galeri2.jpg"
-                                                                                     alt="galeri Fotoğraf">
-                                                                                    <img src="/galeri3.jpg"
-                                                                                         alt="galeri Fotoğraf">
-                                                                                        <img src="/galeri4.jpg"
-                                                                                             alt="galeri Fotoğraf">
-                                                                                            <img src="/galeri5.jpg"
-                                                                                                 alt="galeri Fotoğraf">                
 
 
-
-                                                                                                </div>
-
-                                                                                                </body>
-                                                                                                </html>
+                </body>
+                </html>

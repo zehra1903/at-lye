@@ -1,75 +1,43 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
+            <html xmlns:th="http://www.thymleaf.org">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duyurular | CEYAN Çocuk Atölyesi</title>
+
     <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="/duyurular.css">
             </head>
+
             <body>
-            <div class="topbar">
-                <span>📞 0(542) 899 88 85</span>
-                <span>✉️ info@ceyanatolye.com</span>
-                <span class="social">Takip Et: 🌐 IG | FB</span>
+
+                 <div th:replace="fragments :: topbar"></div>
+                <header th:replace="fragments :: header"></header>
+
+ 
+            
+
+            
+
+
+            <div class="duyurular-container">
+
+                <div th:each="d : ${duyurular}" class="duyuru">
+
+                    <a th:href="@{/duyuru/{id}(id=${d.id})}" class="duyuru-card">
+
+                        <h3 th:text="${d.baslik}"></h3>
+
+                        <span class="tarih" th:text="${#temporals.format(d.tarih, 'dd MMMM yyyy')}"></span>
+
+                       
+                    </a>
+
+                </div>
+
             </div>
 
-
-            <header>
-                <div class="logo">
-                    <img src="/CEYAN.png" alt="Logo" class="logo-img">
-                        <span>CEYAN ÇOCUK ATÖLYESİ</span>
-                </div>
-                
-                <nav>
-                    <ul>
-                        <li><a href="/">Anasayfa</a></li>
-                        <li><a href="/kurumsal" class="active">Kurumsal</a></li>
-                        <li class="dropdown-container">
-                            <a href="#">Programlarımız</a>
-                            <ul class="dropdown-content">
-                                <li><a href="#">🎨 Sanat Atölyesi</a></li>
-                                <li><a href="#">🎵 Müzik Atölyesi</a></li>
-                                <li><a href="#">🎭 Drama Atölyesi</a></li>
-                                <li><a href="#">🧩 Oyun Atölyesi</a></li>
-                                <li><a href="#">🔬 Stem Atölyesi</a></li>
-                                <li><a href="#">📚 Kitap Atölyesi</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/galeri">Galeri</a></li>
-                        <li><a href="/duyurular">Duyurular</a></li>
-                        <li><a href="/iletisim">İletişim</a></li>
-                        <li><a href="/on-kayit" class="btn-navbar">Hızlı Ön Kayıt</a></li>
-                    </ul>
-                </nav>
-                
-                
-                
-                <div class="duyurular-container">
-
-    <h1>Duyurular</h1>
-
-    <div class="duyuru">
-        <a href="/duyuru1">🎉 Yeni Atölye Açılıyor!</a>
-        <span class="tarih">12 Kasım 2025</span>
-    </div>
-
-    <div class="duyuru">
-        <a href="/duyuru2">📢 Kasım Ayı Etkinlik Takvimi Yayında</a>
-        <span class="tarih">5 Kasım 2025</span>
-    </div>
-
-    <div class="duyuru">
-        <a href="/duyuru3">🎨 Sanat Atölyesi Kayıtları Başladı</a>
-        <span class="tarih">1 Kasım 2025</span>
-    </div>
-
-</div>
-
-                </body>
-                </html>
+            </body>
+            </html>

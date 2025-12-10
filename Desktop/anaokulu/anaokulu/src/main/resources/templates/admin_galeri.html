@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+    <title>Admin Paneli | Galeri</title>
+    <link rel="stylesheet" href="/adminduyuru.css">
+    </head>
+
+    <body>
+
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/CEYAN_1.png" alt="Logo">
+                <h2>Admin Paneli</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="/admin/duyurular">Duyurular</a></li>
+            <li><a href="/admin/galeri" class="active">Galeri</a></li>
+            <li><a href="/admin/atolye">Atölye</a></li>
+            <li><a href="/admin/mesajlar">Mesajlar</a></li>
+            <li><a href="/admin/onkayit">Ön Kayıt</a></li>
+            <li><a href="#">Ayarlar</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <h1>Galeri Yönetimi</h1>
+
+        <div th:if="${successMessage}"
+             style="background:#D75AA0; padding:10px; border-radius:5px; margin-bottom:10px; color:black;">
+            <span th:text="${successMessage}"></span>
+        </div>
+
+        <button class="add-button" onclick="document.getElementById('modal').style.display = 'flex'">
+            + Yeni Resim Ekle
+        </button>
+
+        <h2>Mevcut Resimler</h2>
+
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Resim</th>
+                    <th>Sil</th> 
+                </tr>
+
+                <tr th:each="r : ${resimler}">
+                    <td th:text="${r.id}"></td>
+                    <td>
+                <img th:src="${r.resimYolu}" style="width:120px; height:auto; border-radius:8px;">
+                    </td>
+                    <td>
+                        <a th:href="@{/admin/galeri-sil(id=${r.id})}"
+                           class="delete-btn"
+                           onclick="return confirm('Bu resmi silmek istediğine emin misin?');">
+                            ❌ Sil
+                        </a>
+                    </td>
+                    </tr>
+            </table>
+        </div>
+
+
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Yeni Resim Yükle</h2>
+
+            <form action="/admin/galeri-ekle" method="post" enctype="multipart/form-data">
+                <label>Resim Seç:</label>
+                <input type="file" name="resim" required>
+
+                    <button type="submit" class="save-btn">Yükle</button>
+                    <button type="button" class="close-btn" onclick="document.getElementById('modal').style.display = 'none'">Kapat</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

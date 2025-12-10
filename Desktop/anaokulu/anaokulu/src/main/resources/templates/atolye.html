@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${atolye != null} ? atolye.atolyeAdi + ' Atölyesi | CEYAN' : 'Atölye | CEYAN'"></title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/atolye.css">
+</head>
+
+<body>
+
+<div th:replace="fragments :: topbar"></div>
+<header th:replace="fragments :: header"></header>
+
+<div class="section">
+<div class="img">
+    <img src="/kurumsal.jpg" alt="Atölye Fotoğrafı">
+</div>
+
+<div class="kart">
+    <h2>Atölye İçeriği</h2>
+
+    <div class="kutu">
+        <span>🧒 Yaş</span>
+        <span th:text="${atolye.yas}"></span>
+    </div>
+
+    <div class="kutu">
+        <span>⏱ Süre</span>
+        <span th:text="${atolye.sure}"></span>
+    </div>
+
+    <div class="kutu">
+        <span>📚 Ders Sayısı</span>
+        <span th:text="${atolye.dersSayisi}"></span>
+    </div>
+
+    <div class="kutu">
+        <span>🎓 Sertifika</span>
+        <span th:text="${atolye.sertifika}"></span>
+    </div>
+
+    <div class="kutu">
+        <span>🌍 Dil</span>
+        <span th:text="${atolye.dil}"></span>
+    </div>
+
+    <a href="/on-kayit" class="apply-btn">Ön Başvuru Yap →</a>
+</div>
+</div>
+
+
+
+</body>
+</html>

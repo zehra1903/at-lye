@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4 Ara 2025, 15:20:33
+    Author     : ZEHRA
+*/
+.section {
+    display: flex;
+    flex-direction: row; /* Yan yana */
+    align-items: flex-start;
+    justify-content: flex-start; /* Sola yasla */
+    gap: 40px; /* Resim ve kart arası boşluk */
+    padding: 50px 10%;
+    flex-wrap: wrap; /* Mobilde alt alta geçsin */
+}
+
+.img {
+    flex: 1 1 50%; /* Sol taraf, alanı %50 kaplar */
+    max-width: 600px; /* Maks genişlik */
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.kart {
+    flex: 1 1 350px; /* Sağ taraf, genişliği kart kadar */
+    max-width: 410px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column; /* Mobilde alt alta */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .img, .kart {
+        max-width: 100%;
+    }
+}
+
+
+.kart h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+.kutu {
+    display: flex;
+    justify-content: space-between;
+    padding: 21px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+.apply-btn {
+    display: block;
+    margin-top: 25px;
+    background: #f6a15f;
+    padding: 14px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.apply-btn:hover {
+    background: #e2853f;
+}
+
+
+
+
+
+.footer {
+    background: #f4f4f4;
+    padding: 25px 0;
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 15px;
+}
+
+.footer-content strong {
+    color: #000;
+}

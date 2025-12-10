@@ -2,6 +2,8 @@
 <html lang="tr">
     <head>
         <meta charset="UTF-8">
+                    <html xmlns:th="http://www.thymleaf.org">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hızlı Ön Kayıt</title>
     <link rel="stylesheet" href="/style.css">
@@ -14,34 +16,9 @@
         <span class="social">Takip Et: 🌐 IG | FB</span>
     </div>
 
-    <header>
-        <div class="logo">
-            <img src="/CEYAN.png" alt="Logo" class="logo-img">
-                <span>CEYAN ÇOCUK ATÖLYESİ</span>
-        </div>
+    <div th:replace="fragments :: topbar"></div>
+                <header th:replace="fragments :: header"></header>
 
-        <nav>
-            <ul>
-                <li><a href="/">Anasayfa</a></li>
-                <li><a href="#">Kurumsal</a></li>
-                <li class="dropdown-container">
-                    <a href="#">Programlarımız</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">🎨 Sanat Atölyesi</a></li>
-                        <li><a href="#">🎵 Müzik Atölyesi</a></li>
-                        <li><a href="#">🎭 Drama Atölyesi</a></li>
-                        <li><a href="#">🧩 Oyun Atölyesi</a></li>
-                        <li><a href="#">🔬 Stem Atölyesi</a></li>
-                        <li><a href="#">📚 Kitap Atölyesi</a></li>
-                    </ul>
-                </li>
-                <li><a href="/galeri">Galeri</a></li>
-                <li><a href="/duyurular">Duyurular</a></li>
-                <li><a href="iletisim">İletişim</a></li>
-                <li><a href="/on-kayit" class="btn-navbar">Hızlı Ön Kayıt</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <section class="form-section">
         <form action="/on-kayit" method="post">

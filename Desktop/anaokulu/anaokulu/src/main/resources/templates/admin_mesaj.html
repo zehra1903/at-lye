@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mesajlar | Admin Paneli</title>
+    <link rel="stylesheet" href="/adminduyuru.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="/CEYAN_1.png" alt="Logo">
+        <h2>Admin Paneli</h2>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/admin">Duyurular</a></li>
+        <li><a href="/admin/galeri">Galeri</a></li>
+        <li><a href="/admin/atolye">Atölye</a></li>
+        <li><a class="active" href="/admin/mesajlar">Mesajlar</a></li>
+        <li><a href="/admin/onkayit">Ön Kayıt</a></li>
+        <li><a href="#">Ayarlar</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Gönderilen Mesajlar</h1>
+
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Ad Soyad</th>
+                <th>Email</th>
+                <th>Mesaj</th>
+            </tr>
+
+            <tr th:each="m : ${mesajlar}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.adSoyad}"></td>
+                <td th:text="${m.email}"></td>
+                <td th:text="${m.mesaj}"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

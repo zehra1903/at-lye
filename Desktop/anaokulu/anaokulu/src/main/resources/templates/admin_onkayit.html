@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ön Kayıt Listesi | Admin Paneli</title>
+    <link rel="stylesheet" href="/adminduyuru.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="/CEYAN_1.png" alt="Logo">
+        <h2>Admin Paneli</h2>
+    </div>
+
+    <ul class="menu">
+        <li><a href="/admin">Duyurular</a></li>
+        <li><a href="/admin/galeri">Galeri</a></li>
+        <li><a href="/admin/atolye">Atölye</a></li>
+        <li><a href="/admin/mesajlar">Mesajlar</a></li>
+        <li><a class="active" href="/admin/onkayit">Ön Kayıt</a></li>
+        <li><a href="#">Ayarlar</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Ön Kayıt Listesi</h1>
+
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Çocuk Adı</th>
+                <th>Veli Adı</th>
+                <th>Telefon</th>
+                <th>Atölye</th>
+            </tr>
+
+            <tr th:each="o : ${onkayitlar}">
+                <td th:text="${o.id}"></td>
+                <td th:text="${o.childName}"></td>
+                <td th:text="${o.parentName}"></td>
+                <td th:text="${o.phone}"></td>
+                <td th:text="${o.atolye}"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
+

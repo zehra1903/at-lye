@@ -10,24 +10,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDateTime;
 
 /**
  *
  * @author ZEHRA
  */
 @Entity
-public class Duyuru {
+public class Mesaj {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String baslik;
+    private String adSoyad;
+    private String email;
 
     @Column(columnDefinition = "TEXT")
-    private String icerik;
-
-    private LocalDateTime tarih = LocalDateTime.now();
+    private String mesaj;
 
     public Long getId() {
         return id;
@@ -37,29 +35,30 @@ public class Duyuru {
         this.id = id;
     }
 
-    public String getBaslik() {
-        return baslik;
+    public String getAdSoyad() {
+        return adSoyad;
     }
 
-    public void setBaslik(String baslik) {
-        this.baslik = baslik;
+    public void setAdSoyad(String adSoyad) {
+        this.adSoyad = adSoyad;
     }
 
-    public String getIcerik() {
-        return icerik;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIcerik(String icerik) {
-        this.icerik = icerik;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public LocalDateTime getTarih() {
-        return tarih;
+    public String getMesaj() {
+        return mesaj;
     }
 
-    public void setTarih(LocalDateTime tarih) {
-        this.tarih = tarih;
+    public void setMesaj(String mesaj) {
+        this.mesaj = mesaj;
     }
-    
+
     
 }
+

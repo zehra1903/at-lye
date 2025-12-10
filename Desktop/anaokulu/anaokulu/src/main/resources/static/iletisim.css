@@ -1,0 +1,133 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19 Kas 2025, 17:16:48
+    Author     : ZEHRA
+*/
+
+.iletisim-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.iletisim-container h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.iletisim-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.iletisim-bilgileri {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.iletisim-bilgileri h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.iletisim-bilgileri p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.iletisim-bilgileri a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: 500;
+}
+
+.iletisim-bilgileri a:hover {
+    text-decoration: underline;
+}
+
+.iletisim-harita {
+    flex: 1;
+    min-width: 300px;
+}
+
+.iletisim-harita iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border-radius: 14px;
+}
+
+.iletisim-form {
+    margin-top: 50px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.iletisim-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.iletisim-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.iletisim-form input,
+.iletisim-form textarea {
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.iletisim-form textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+.iletisim-form button {
+    padding: 14px;
+    font-size: 18px;
+    background: #ff9966;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.iletisim-form button:hover {
+    background: #ff7b3a;
+}
+
+
+@media (max-width: 768px) {
+    .iletisim-content {
+        flex-direction: column;
+    }
+
+    .iletisim-harita iframe {
+        min-height: 280px;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+    <html xmlns:th="http://www.thymleaf.org">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>İletişim | CEYAN Çocuk Atölyesi</title>
+        <link rel="stylesheet" href="/style.css">
+            <link rel="stylesheet" href="/iletisim.css">
+                </head>
+
+                <body>
+                <div th:replace="fragments :: topbar"></div>
+                <header th:replace="fragments :: header"></header>
+
+                
+
+
+
+
+                <section class="iletisim-container">
+
+                    <h1>İletişim</h1>
+
+                    <div class="iletisim-content">
+
+                        <div class="iletisim-bilgileri">
+                            <h2>Bize Ulaşın</h2>
+
+                            <p><strong>📍 Adres:</strong><br>
+                                Ceyan Anaokulu, Yazır Mahallesi İnönü Caddesi Konya / Türkiye</p>
+
+                            <p><strong>📞 Telefon:</strong><br>
+                                <a href="tel:05428997566">0 (542) 899 75 66</a></p>
+
+                            <p><strong>✉️ E-posta:</strong><br>
+                                <a href="mailto:info@ceyanatolye.com">info@ceyanatolye.com</a></p>
+
+                            <p><strong>🕒 Çalışma Saatleri:</strong><br>
+                                Hafta içi: 09:00 – 18:00<br>
+                                Cumartesi: 10:00 – 16:00<br>
+                                Pazar: Kapalı</p>
+
+                            <p><strong>🌐 Sosyal Medya:</strong><br>
+                                IG | FB</p>
+                        </div>
+
+                        <div class="iletisim-harita">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.122!2d28.123!3d41.022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zNDEuxJzAxJzExLjQiTiAyOMKwMDcnMjcuMSJF!5e0!3m2!1str!2str!4v0000000000000"
+                                width="100%" height="300" style="border-radius: 12px; border:0;" allowfullscreen>
+                            </iframe>
+                        </div>
+
+                    </div>
+
+
+                    <div class="iletisim-form">
+                        <h2>Bize Mesaj Gönderin</h2>
+
+                        <form action="/iletisim-gonder" method="post">
+                            <input type="text" name="adSoyad" placeholder="Ad Soyad" required>
+                                <input type="email" name="email" placeholder="Email" required>
+                                    <textarea name="mesaj" placeholder="Mesajınız" required></textarea>
+                                    <button type="submit">Gönder</button>
+                                    </form>
+
+
+
+
+                                    </div>
+
+                                    </section>
+
+                                    </body>
+                                    </html>

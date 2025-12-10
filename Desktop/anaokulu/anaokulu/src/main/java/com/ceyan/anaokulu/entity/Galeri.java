@@ -5,29 +5,24 @@
  */
 package com.ceyan.anaokulu.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDateTime;
 
 /**
  *
  * @author ZEHRA
  */
 @Entity
-public class Duyuru {
+public class Galeri {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    private String resimYolu;
     private String baslik;
-
-    @Column(columnDefinition = "TEXT")
-    private String icerik;
-
-    private LocalDateTime tarih = LocalDateTime.now();
 
     public Long getId() {
         return id;
@@ -37,6 +32,14 @@ public class Duyuru {
         this.id = id;
     }
 
+    public String getResimYolu() {
+        return resimYolu;
+    }
+
+    public void setResimYolu(String resimYolu) {
+        this.resimYolu = resimYolu;
+    }
+
     public String getBaslik() {
         return baslik;
     }
@@ -44,22 +47,8 @@ public class Duyuru {
     public void setBaslik(String baslik) {
         this.baslik = baslik;
     }
-
-    public String getIcerik() {
-        return icerik;
-    }
-
-    public void setIcerik(String icerik) {
-        this.icerik = icerik;
-    }
-
-    public LocalDateTime getTarih() {
-        return tarih;
-    }
-
-    public void setTarih(LocalDateTime tarih) {
-        this.tarih = tarih;
-    }
+    
+    
     
     
 }

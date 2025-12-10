@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Giriş | CEYAN</title>
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="login-container">
+    <div class="login-box">
+        
+        <img src="/CEYAN_1.png" class="logo">
+        <h2>Admin Girişi</h2>
+
+       <form action="/admin/login" method="post">
+
+
+            <input type="text" name="username" placeholder="Kullanıcı adı" required>
+
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password" placeholder="Şifre" required>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const input = document.getElementById("password");
+    if (input.type === "password") {
+        input.type = "text";
+    } else {
+        input.type = "password";
+    }
+}
+</script>
+
+</body>
+</html>
